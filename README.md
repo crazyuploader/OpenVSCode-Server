@@ -1,6 +1,8 @@
 # OpenVSCode-Server
 
-> VS Code on the go!
+> Run VS Code in browser! Based on GitPod [OpenVSCode Server](https://github.com/gitpod-io/openvscode-server).
+
+Source code for VS Code Server Docker Image on [DockerHub](https://hub.docker.com/repository/docker/crazyuploader/vscode_server). 
 
 ## Usage
 
