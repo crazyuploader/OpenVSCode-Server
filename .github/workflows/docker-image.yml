@@ -12,14 +12,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build the Docker Image
-        run: docker build --file Dockerfile --tag crazyuploader/vscode_server:latest .
 
-      - name: Login in DockerHub
-        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Push the Built Docker Image
-        run: docker push crazyuploader/vscode_server:latest
+      - name: Build & Push vscode_server:latest Docker Image tag
+        run: |
+          docker build --file Dockerfile --tag crazyuploader/vscode_server:latest .
+          docker push crazyuploader/vscode_server:latest
+
+      - name: Build & Push vscode_server:full Docker Image tag
+        run: |
+          docker build --file Dockerfile --tag crazyuploader/vscode_server:full .
+          docker push crazyuploader/vscode_server:full
+
+      - name: List Docker Image(s)
+        run: |
+          docker images

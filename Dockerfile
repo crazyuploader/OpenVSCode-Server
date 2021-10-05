@@ -28,10 +28,12 @@ RUN apt-get install --yes \
     gnupg-agent \
     iputils-ping \
     mtr \
+    nano \
     net-tools \
     software-properties-common \
     sudo \
     traceroute \
+    vim \
     wget
 
 # Clean up
