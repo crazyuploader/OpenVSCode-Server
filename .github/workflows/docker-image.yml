@@ -21,5 +21,5 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
 
-      - name: Push the Docker Image
+      - name: Push the Built Docker Image
         run: docker push crazyuploader/vscode_server:latest
