@@ -1,7 +1,9 @@
 version: "3.9"
 services:
   code_server:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.full
     container_name: "VSCode_Server"
     ports:
       - "127.0.0.1:3000:3000"
