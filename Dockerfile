@@ -60,6 +60,6 @@ USER jungle
 EXPOSE 3000
 
 ENV HOME=/home/jungle
-ENV PATH=${PATH}/home/jungle/.local/bin
+ENV PATH=${PATH}:/home/jungle/.local/bin
 
 ENTRYPOINT ["/opt/openvscode-server/server.sh"]
