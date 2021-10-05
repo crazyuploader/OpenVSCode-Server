@@ -28,4 +28,4 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
 
 USER jungle
 WORKDIR /home/jungle
-ENV PATH=${PATH}/home/jungle/.local/bin
+ENV PATH=${PATH}:/home/jungle/.local/bin
