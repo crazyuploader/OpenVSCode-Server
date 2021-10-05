@@ -19,12 +19,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build & Push vscode_server:latest Docker Image tag
+      - name: Build & Push 'vscode_server:latest' Docker Image tag
         run: |
           docker build --file Dockerfile --tag crazyuploader/vscode_server:latest .
           docker push crazyuploader/vscode_server:latest
 
-      - name: Build & Push vscode_server:full Docker Image tag
+      - name: Build & Push 'vscode_server:full' Docker Image tag
         run: |
           docker build --file Dockerfile.full --tag crazyuploader/vscode_server:full .
           docker push crazyuploader/vscode_server:full
