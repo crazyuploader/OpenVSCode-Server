@@ -24,3 +24,7 @@ docker-compose up --build --detach
 ```
 
 This will pull the Docker Image from [`crazyuploader/vscode_server`](https://hub.docker.com/repository/docker/crazyuploader/vscode_server), and publish the port `3000` on the host machine, and the VS Code Server will then be available at `http://localhost:3000`.
+
+### Based on
+
+- [GitPod - Open VS Code Server](https://github.com/gitpod-io/openvscode-server)
