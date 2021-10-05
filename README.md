@@ -6,6 +6,8 @@ Source code for VS Code Server Docker Image on [DockerHub](https://hub.docker.co
 
 ## Usage
 
+**With Docker Image**
+
 ```bash
 docker run \
     --detach \
@@ -13,6 +15,12 @@ docker run \
     --publish 127.0.0.1:3000:3000 \
     --restart=unless-stopped \
     crazyuploader/vscode_server
+```
+
+**With Docker Compose**
+
+```bash
+docker-compose up --build --detach
 ```
 
 This will pull the Docker Image from [`crazyuploader/vscode_server`](https://hub.docker.com/repository/docker/crazyuploader/vscode_server), and publish the port `3000` on the host machine, and the VS Code Server will then be available at `http://localhost:3000`.
