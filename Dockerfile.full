@@ -19,12 +19,14 @@ RUN apt-get install -y \
         python3-setuptools \
         python3-dev
 
-# Upgrading pip
-RUN pip3 install --upgrade pip
-
 # Install NodeJS
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs
 
+# Switch user back to jungle
 USER jungle
+
+# Upgrading pip
+RUN pip3 install --upgrade pip
+
 WORKDIR /home/jungle
