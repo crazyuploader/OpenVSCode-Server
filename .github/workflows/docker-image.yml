@@ -2,17 +2,24 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build --file Dockerfile --tag crazyuploader/vscode_server:latest .
+      - uses: actions/checkout@v2
+      - name: Build the Docker Image
+        run: docker build --file Dockerfile --tag crazyuploader/vscode_server:latest .
+
+      - name: Login in DockerHub
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+
+      - name: Push the Docker Image
+        run: docker push crazyuploader/vscode_server:latest
