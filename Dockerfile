@@ -34,6 +34,10 @@ RUN apt-get install --yes \
     traceroute \
     wget
 
+# Clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/*
+
 # Adding user & setting it up
 RUN useradd -ms /usr/bin/bash -G sudo -u 1000 jungle && \
     echo "jungle ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
