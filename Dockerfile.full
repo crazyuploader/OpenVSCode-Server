@@ -29,4 +29,7 @@ USER jungle
 # Upgrading pip
 RUN pip3 install --upgrade pip
 
+# Updating NPM
+RUN sudo npm install --global npm@latest
+
 WORKDIR /home/jungle
