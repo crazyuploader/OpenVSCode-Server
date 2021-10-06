@@ -26,9 +26,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
 # Switch user back to jungle
 USER jungle
 
-# Upgrading pip
+# Upgrading pip & installing packages
 RUN pip3 install --upgrade pip && \
-    pip3 install --upgrade pylint
+    pip3 install --upgrade pylint pipenv
 
 # Updating NPM
 RUN sudo npm install --global npm@latest
