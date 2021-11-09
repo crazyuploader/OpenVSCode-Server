@@ -14,7 +14,7 @@ Source code for VS Code Server Docker Image on [DockerHub](https://hub.docker.co
 docker run \
     --detach \
     --name=vscode_server \
-    --publish 127.0.0.1:3000:3000 \
+    --publish 127.0.0.1:8000:8000 \
     --restart=unless-stopped \
     crazyuploader/vscode_server
 ```

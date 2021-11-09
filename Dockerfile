@@ -56,8 +56,8 @@ RUN wget --quiet https://github.com/gitpod-io/openvscode-server/releases/downloa
 # Switching User
 USER jungle
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 8000
+EXPOSE 8000
 
 ENV HOME=/home/jungle
 ENV PATH=${PATH}:/home/jungle/.local/bin
