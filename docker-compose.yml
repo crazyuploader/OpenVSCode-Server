@@ -7,6 +7,6 @@ services:
     container_name: "VSCode_Server"
     restart: "unless-stopped"
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:${VSCODE_SERVER_PORT:-3000}:3000"
     volumes:
       - ./data:/home/jungle/.opencode-server
