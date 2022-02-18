@@ -62,4 +62,4 @@ EXPOSE 3000
 ENV HOME=/home/jungle
 ENV PATH=${PATH}:/home/jungle/.local/bin
 
-ENTRYPOINT ["/opt/openvscode-server/node", "/opt/openvscode-server/out/server-main.js"]
+ENTRYPOINT ["/opt/openvscode-server/node", "/opt/openvscode-server/out/server-main.js", "--host", "0.0.0.0"]
