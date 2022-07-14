@@ -13,6 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set VS Code Version Environment Variable
+        run: |
+          DOCKERFILE_VSCODE_VERSION=$(cat Dockerfile | grep "ARG VSCODE_VERSION" | cut -d "=" -f 2)
+          echo "DOCKERHUB_RELEASE=${DOCKERFILE_VSCODE_VERSION}" >> $GITHUB_ENV
+
+      - name: Print DockerHub Release Version
+        run: |
+          echo "${DOCKERHUB_RELEASE}"
+
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
