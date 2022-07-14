@@ -4,6 +4,12 @@
 
 [![Docker Image CI](https://github.com/crazyuploader/OpenVSCode-Server/actions/workflows/docker-image.yml/badge.svg)](https://github.com/crazyuploader/OpenVSCode-Server/actions/workflows/docker-image.yml)
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/crazyuploader/OpenVSCode-Server?label=GitHub%20Release&logo=github)](https://github.com/crazyuploader/OpenVSCode-Server/releases)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/crazyuploader/vscode_server?label=DockerHub%20Image%20Version&logo=docker&sort=semver)](https://hub.docker.com/repository/docker/crazyuploader/vscode_server)
+
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/crazyuploader/vscode_server/latest?label=Image%20Size&logo=docker)](https://hub.docker.com/repository/docker/crazyuploader/vscode_server)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/crazyuploader/vscode_server/latest-full?label=Image%20Size%20%28full%29&logo=docker)](https://hub.docker.com/repository/docker/crazyuploader/vscode_server)
+
 Source code for VS Code Server Docker Image on [DockerHub](https://hub.docker.com/repository/docker/crazyuploader/vscode_server).
 
 ## Usage
