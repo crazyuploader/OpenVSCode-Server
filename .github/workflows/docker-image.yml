@@ -26,12 +26,12 @@ jobs:
 
       - name: Build & Push 'vscode_server:latest' Docker Image tag
         run: |
-          docker build --file Dockerfile --tag crazyuploader/vscode_server:latest crazyuploader/vscode_server:${DOCKERHUB_RELEASE} .
+          docker build --file Dockerfile --tag crazyuploader/vscode_server:latest --tag crazyuploader/vscode_server:${DOCKERHUB_RELEASE} .
           docker push crazyuploader/vscode_server --all-tags
 
       - name: Build & Push 'vscode_server:full' Docker Image tag
         run: |
-          docker build --file Dockerfile.full --tag crazyuploader/vscode_server:latest-full crazyuploader/vscode_server:${DOCKERHUB_RELEASE}-full .
+          docker build --file Dockerfile.full --tag crazyuploader/vscode_server:latest-full --tag crazyuploader/vscode_server:${DOCKERHUB_RELEASE}-full .
           docker push crazyuploader/vscode_server:full --all-tags
 
       - name: List Docker Image(s)
