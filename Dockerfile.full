@@ -23,6 +23,21 @@ RUN apt-get install -y \
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs
 
+# Golang Version
+ARG GOLANG_VERSION="1.19.4"
+
+# Install Golang
+RUN cd /tmp && \
+    curl -sLo golang.tar.gz https://go.dev/dl/go1.19.4.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf golang.tar.gz
+
+# Set PATH environment variable
+ENV PATH="${PATH}:/usr/local/go/bin"
+
+# Check NodeJS & Golang version
+RUN node --version && \
+    go version
+
 # Switch user back to jungle
 USER jungle
 
