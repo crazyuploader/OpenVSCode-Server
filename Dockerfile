@@ -13,7 +13,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM=xterm-256color
 
 # VS Code Server Version
-ARG VSCODE_VERSION=1.76.0
+ARG VSCODE_VERSION=1.77.1
 
 # Package list update and upgrade
 RUN apt-get update && \
