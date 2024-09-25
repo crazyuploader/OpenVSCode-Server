@@ -20,8 +20,9 @@ RUN apt-get update && \
     apt-get upgrade --yes
 
 # Installing packages
-RUN apt-get install --yes \
+RUN apt-get install --yes --no-install-recommends \
     apt-transport-https \
+    btop \
     ca-certificates \
     curl \
     git \
