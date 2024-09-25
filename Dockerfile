@@ -3,8 +3,8 @@
 #
 # Description: VS Code Server Dockerfile
 #
-# Using Base Image: ubuntu:focal
-FROM ubuntu:focal
+# Base Image: ubuntu:noble
+FROM ubuntu:noble
 
 # Setting Non-Interactive Build Time Environment Variable
 ARG DEBIAN_FRONTEND=noninteractive
@@ -13,7 +13,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM=xterm-256color
 
 # VS Code Server Version
-ARG VSCODE_VERSION=1.77.1
+ARG VSCODE_VERSION=1.93.1
 
 # Package list update and upgrade
 RUN apt-get update && \
@@ -25,7 +25,7 @@ RUN apt-get install --yes \
     ca-certificates \
     curl \
     git \
-    gnupg-agent \
+    gpg \
     iputils-ping \
     mtr \
     nano \
@@ -39,6 +39,11 @@ RUN apt-get install --yes \
 # Clean up
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
+
+# Remove default user "ubuntu" if it exists
+RUN if id "ubuntu" &>/dev/null; then \
+    deluser --remove-home --remove-all-files ubuntu; \
+    fi
 
 # Adding user & setting it up
 RUN useradd -ms /usr/bin/bash -G sudo -u 1000 jungle && \
