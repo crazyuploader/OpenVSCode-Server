@@ -4,7 +4,7 @@
 # Description: VS Code Server Dockerfile
 #
 # Base Image: ubuntu:noble
-FROM ubuntu:noble
+FROM ubuntu:resolute
 
 # Setting Non-Interactive Build Time Environment Variable
 ARG DEBIAN_FRONTEND=noninteractive
@@ -21,6 +21,7 @@ RUN apt-get update && \
 
 # Installing packages
 RUN apt-get install --yes --no-install-recommends \
+    adduser \
     apt-transport-https \
     btop \
     ca-certificates \
