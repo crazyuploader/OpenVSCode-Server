@@ -21,6 +21,7 @@ RUN apt-get update && \
 
 # Installing packages
 RUN apt-get install --yes --no-install-recommends \
+    adduser \
     apt-transport-https \
     btop \
     ca-certificates \
