@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.full
-    container_name: "VSCode_Server"
+    container_name: "code-server"
     restart: "unless-stopped"
     ports:
       - "127.0.0.1:${VSCODE_SERVER_PORT:-3000}:3000"
